@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="CBW.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+  <Role name="CBW.ApiWorker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="cloudConn" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="cbw" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBlQYJKoZIhvcNAQcDoIIBhjCCAYICAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEGMqo1543YqxQJ3p3ykqI0MwDQYJKoZIhvcNAQEBBQAEggEAjuBKGC5ljebBUQHOd24DvC0G2sutPaCtYwCuMRIVG43zLL3yclNWK16X6N2cp5uBrj/3cXmxtNA5NJdcKEElgU8GF9aylpENrKjKEopwhBC36NxRwk6Wa7QqJRxEnrRW1mTG2YV2BXhndWbMSXbS+Ndr0JpZt7BeRPrNWdjPW7tmvP/KS/OSGToVbt674f/ZkX5wXm4xuyv7dwO9Y8f+i2bmjOtajOmW4dgWxAO1WuxSFv0o34vaExVMMjxbdR0SS2Y6LDgAfHAmkp1/LG05/biTHh2OhtJzHdglbBYBR5nfzRimbdt+D2/MKgcPnPC+a/g3UIbztcfiOM8Eq2FfBTArBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECIQ9tiMDQ7bBgAgD0kBdIqJXKQ==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2014-08-01T23:59:59.0000000-07:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="CC2F1D2D429C9CB672B8D4D4A2CEB3CB747AB08A" thumbprintAlgorithm="sha1" />
+    </Certificates>
+
+  </Role>
+</ServiceConfiguration>

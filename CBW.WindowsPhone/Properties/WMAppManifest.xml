@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US" />
+  <Languages xmlns="">
+    <Language code="en" />
+  </Languages>
+  <App xmlns="" ProductID="{406f7b91-c44e-453d-8743-3be21682163c}" Title="Speech Memo" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mengye Ren, Kuangwei Zhang" Description="Speech memo - Use your voice to keep track of your things to remember - appointments, meetings, and reminders." Publisher="Mengye Ren, Kuangwei Zhang" PublisherID="{867ed03a-1654-4479-9189-034b27fdf20b}">
+    <IconPath IsRelative="true" IsResource="false">Assets\icon_s.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_MAP" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="CBW.WindowsPhoneToken" TaskName="_default">
+        <TemplateIconic>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\icon_m.png</SmallImageURI>
+          <Count>0</Count>
+          <IconImageURI IsRelative="true" IsResource="false">Assets\icon_m.png</IconImageURI>
+          <Title>
+          </Title>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
+          <HasLarge>True</HasLarge>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
+        </TemplateIconic>
+      </PrimaryToken>
+    </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>

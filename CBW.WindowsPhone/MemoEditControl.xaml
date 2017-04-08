@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="CBW.WindowsPhone.MemoEditControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="250" d:DesignWidth="480">
+
+    <Grid x:Name="EditLayoutRoot" Background="{StaticResource PhoneChromeBrush}" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".25*"/>
+            <ColumnDefinition Width=".75*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Edit memo..." Margin="12,30,12,12" FontSize="30" Grid.Row="0" Grid.ColumnSpan="3" ></TextBlock>
+        <TextBox x:Name="MemoEdittxtBox" Grid.Row="1" Grid.ColumnSpan="3" Height="Auto" TextWrapping="Wrap" Text="{Binding}"></TextBox>
+        <Button x:Name="MemoEditOk" Content="OK" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Height="72"/>
+        <Button x:Name="MemoEditCancel" Content="Cancel" Grid.Row="5" Grid.Column="2" Height="72"/>
+    </Grid>
+</UserControl>

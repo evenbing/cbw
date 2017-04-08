@@ -1,0 +1,16 @@
+this	0	Unary	Left	10
+next	1	Unary	Left	10
+coming	1	Unary	Left	10
+previous	-1	Unary	Left	10
+last	-1	Unary	Left	10
+later	1	Unary	Right	10
+earlier	-1	Unary	Right	10
+ago	-1	Unary	Right	10
+at	1	Unary	Left	10
+before	-1	Binary	Right	5
+to	-1	Binary	Right	10
+after	1	Binary	Right	5
+of	1	Binary	Right	20
+in	1	Binary	Left	5
+on	1	Binary	Left	5
+past	1	Binary	Right	10

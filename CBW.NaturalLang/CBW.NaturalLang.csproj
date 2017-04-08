@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F0A7D45-80A6-4732-9EF6-93A1567F4ABB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CBW.NaturalLang</RootNamespace>
+    <AssemblyName>CBW.NaturalLang</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DateTime\DateTimeExtractor.cs" />
+    <Compile Include="DateTime\DateTimeOperation.cs" />
+    <Compile Include="DateTime\DateTimeParser.cs" />
+    <Compile Include="DateTime\DateTimeTagger.cs" />
+    <Compile Include="DateTime\DateTimeType.cs" />
+    <Compile Include="DateTime\IgnoreTagger.cs" />
+    <Compile Include="DateTime\MonthOfYear.cs" />
+    <Compile Include="DateTime\NumberAggregator.cs" />
+    <Compile Include="DateTime\NumberTagger.cs" />
+    <Compile Include="DateTime\ITimeEvalNode.cs" />
+    <Compile Include="DateTime\OperatorInfo.cs" />
+    <Compile Include="DateTime\OperatorNode.cs" />
+    <Compile Include="DateTime\OperatorReadDirection.cs" />
+    <Compile Include="DateTime\OperatorTagger.cs" />
+    <Compile Include="DateTime\OperatorType.cs" />
+    <Compile Include="Keywords\Constants.cs" />
+    <Compile Include="Keywords\Disposable.cs" />
+    <Compile Include="Keywords\ExtensionMethods.cs" />
+    <Compile Include="Keywords\ISentenceBreaker.cs" />
+    <Compile Include="Keywords\IStemmer.cs" />
+    <Compile Include="Keywords\IWordBreaker.cs" />
+    <Compile Include="Keywords\KeywordsExtraction.cs" />
+    <Compile Include="Keywords\Language.cs" />
+    <Compile Include="Keywords\NativeMethods.cs" />
+    <Compile Include="Keywords\SentenceBreaker.cs" />
+    <Compile Include="Keywords\Stemmer.cs" />
+    <Compile Include="Keywords\WordBreaker.cs" />
+    <Compile Include="Keywords\WordFormSink.cs" />
+    <Compile Include="Keywords\WordSink.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DateTime\Tag.cs" />
+    <Compile Include="DateTime\TagFactory.cs" />
+    <Compile Include="DateTime\TaggedItem.cs" />
+    <Compile Include="DateTime\Tagger.cs" />
+    <Compile Include="DateTime\LeafNode.cs" />
+    <Compile Include="DateTime\BinaryOperatorNode.cs" />
+    <Compile Include="DateTime\Tokenizer.cs" />
+    <Compile Include="DateTime\UnaryOperatorNode.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Tags\datetime.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Tags\numberOrd.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Tags\numbers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Tags\operator.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sentsepenu_64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

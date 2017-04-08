@@ -1,0 +1,117 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing"
+    xmlns:local="clr-namespace:CBW.WindowsPhone"
+    x:Class="CBW.WindowsPhone.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    
+    <phone:PhoneApplicationPage.Resources>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <phone:Pivot Grid.Row="0" Title="Speech Memo" FontSize="10">
+            <phone:PivotItem Header="tiles" Margin="0,0,0,0" >
+                <ListBox x:Name="MainPageGrid" ItemsSource="{Binding}" Tap="MainPageGrid_Tap_1" Margin="20,10,0,0">
+                    <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <toolkit:WrapPanel ItemWidth="220" ItemHeight="220">
+                                </toolkit:WrapPanel>
+                            </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </phone:PivotItem>
+
+            <!--Panorama item two-->
+            <phone:PivotItem Header="recent" Margin="0,0,0,0">
+                <Grid x:Name="ContentPanel" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <!--<RowDefinition Height="80"/>-->
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="RecentBox" Grid.Row="0"  ItemsSource="{Binding}" Margin="20,0,0,10" Tap="GoMemoDetailTap">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel x:Name ="DetailPanel" Orientation="Vertical" Margin="4" >
+                                    <TextBlock Text = "{Binding KeywordsString}" Margin="0" FontSize="35" Foreground="White" MaxWidth="350" HorizontalAlignment="Left"/>
+                                    <Grid Margin="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="25"/>
+                                            <RowDefinition Height="25"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="88"/>
+                                            <ColumnDefinition Width="255"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text= "Alarm on: " Margin="0" FontSize="20" Foreground="#FF112FEE" Grid.Column="0" Grid.Row="0"/>
+                                        <TextBlock Text = "{Binding RemindTime}" Margin="0" FontSize="20" Foreground= "#FF112FEE" Grid.Column="1" Grid.Row="0"/>
+                                        <TextBlock Text = "{Binding ShortCreatedTime}" FontSize="20" Foreground="White" Grid.Column="2"  Grid.Row ="0" HorizontalAlignment="Right"/>
+                                        <TextBlock Text = "{Binding Content}" Margin="0" FontSize="20" Foreground="Gray" Grid.Column="0" 
+                                                   Grid.ColumnSpan ="3" Grid.Row="1" MaxWidth="350" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                    
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--<phone:PivotItem Header="talk" Margin="0,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid x:Name="ConversationContent" Grid.Row="0" Margin="0,0,0,0">
+                        <ScrollViewer x:Name="ScrollPanel"  Margin="0,0,0,0">
+                            <local:ConversationView x:Name="ConversationPanel" Width="480"/>
+                        </ScrollViewer>
+                    </Grid>
+                    <local:TapToSpeak x:Name="tapToSpeak" Grid.Row="1" Width="460" Margin="0,0,0,0"/>
+                </Grid>
+            </phone:PivotItem>-->
+        </phone:Pivot>
+        <local:TeachOrRetrieve x:Name="TR2"  Grid.Row="1"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>
